@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		10BFF5E71F10B8C100046E2A /* YYWeakProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 10BFF5E41F10B8C100046E2A /* YYWeakProxy.m */; };
+		10BFF5E81F10B8C100046E2A /* YZWaterWaveView.m in Sources */ = {isa = PBXBuildFile; fileRef = 10BFF5E61F10B8C100046E2A /* YZWaterWaveView.m */; };
 		10F85A731F0F33F000662991 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 10F85A721F0F33F000662991 /* main.m */; };
 		10F85A761F0F33F000662991 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 10F85A751F0F33F000662991 /* AppDelegate.m */; };
 		10F85A791F0F33F000662991 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 10F85A781F0F33F000662991 /* ViewController.m */; };
@@ -16,6 +18,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		10BFF5E31F10B8C100046E2A /* YYWeakProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYWeakProxy.h; sourceTree = "<group>"; };
+		10BFF5E41F10B8C100046E2A /* YYWeakProxy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYWeakProxy.m; sourceTree = "<group>"; };
+		10BFF5E51F10B8C100046E2A /* YZWaterWaveView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YZWaterWaveView.h; sourceTree = "<group>"; };
+		10BFF5E61F10B8C100046E2A /* YZWaterWaveView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YZWaterWaveView.m; sourceTree = "<group>"; };
 		10F85A6E1F0F33F000662991 /* YZWaterWaveView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YZWaterWaveView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		10F85A721F0F33F000662991 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		10F85A741F0F33F000662991 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -39,6 +45,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		10BFF5E21F10B8C100046E2A /* YZWaterWaveView */ = {
+			isa = PBXGroup;
+			children = (
+				10BFF5E31F10B8C100046E2A /* YYWeakProxy.h */,
+				10BFF5E41F10B8C100046E2A /* YYWeakProxy.m */,
+				10BFF5E51F10B8C100046E2A /* YZWaterWaveView.h */,
+				10BFF5E61F10B8C100046E2A /* YZWaterWaveView.m */,
+			);
+			path = YZWaterWaveView;
+			sourceTree = "<group>";
+		};
 		10F85A651F0F33F000662991 = {
 			isa = PBXGroup;
 			children = (
@@ -58,6 +75,7 @@
 		10F85A701F0F33F000662991 /* YZWaterWaveView */ = {
 			isa = PBXGroup;
 			children = (
+				10BFF5E21F10B8C100046E2A /* YZWaterWaveView */,
 				10F85A741F0F33F000662991 /* AppDelegate.h */,
 				10F85A751F0F33F000662991 /* AppDelegate.m */,
 				10F85A771F0F33F000662991 /* ViewController.h */,
@@ -151,6 +169,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				10BFF5E81F10B8C100046E2A /* YZWaterWaveView.m in Sources */,
+				10BFF5E71F10B8C100046E2A /* YYWeakProxy.m in Sources */,
 				10F85A791F0F33F000662991 /* ViewController.m in Sources */,
 				10F85A761F0F33F000662991 /* AppDelegate.m in Sources */,
 				10F85A731F0F33F000662991 /* main.m in Sources */,
@@ -276,7 +296,7 @@
 				DEVELOPMENT_TEAM = 94A5HQWMK3;
 				INFOPLIST_FILE = YZWaterWaveView/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.CancerQ.YZWaterWaveView;
+				PRODUCT_BUNDLE_IDENTIFIER = com.CancerQ.waterwave;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -288,7 +308,7 @@
 				DEVELOPMENT_TEAM = 94A5HQWMK3;
 				INFOPLIST_FILE = YZWaterWaveView/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.CancerQ.YZWaterWaveView;
+				PRODUCT_BUNDLE_IDENTIFIER = com.CancerQ.waterwave;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -312,6 +332,7 @@
 				10F85A871F0F33F000662991 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
