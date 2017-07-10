@@ -21,12 +21,21 @@
     
     self.view.backgroundColor = RGBAlpha_255(46, 159, 255, 1);
     YZWaterWaveView *wateView = [[YZWaterWaveView alloc]initWithFrame:CGRectMake(20, 20, self.view.frame.size.width - 40, self.view.frame.size.height - 40)];
+    
     [wateView yz_configHandle:^(YZWaterWave *config) {
         config.rotation = 3.f;
-        
         //这里不会有循环引用 可以放心试用
         NSLog(@"%@",self.view);
     }];
+//    __block CGFloat s = 1;
+//    NSTimer *time = [NSTimer scheduledTimerWithTimeInterval:0.1 repeats:YES block:^(NSTimer * _Nonnull timer) {
+//        s -= 0.01;
+//        [wateView yz_configHandle:^(YZWaterWave *config) {
+//            config.rotation = 3.f;
+//            config.positionPercent = s;
+//        }];
+//    }];
+//    [[NSRunLoop alloc]addTimer:time forMode:NSRunLoopCommonModes];
     
     //可以添加在任意的视图上
     [self.view addSubview:wateView];

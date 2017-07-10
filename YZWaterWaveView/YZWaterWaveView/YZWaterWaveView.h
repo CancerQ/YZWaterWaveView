@@ -23,6 +23,11 @@
  *  旋转角度
  */
 @property (nonatomic, assign) CGFloat rotation;
+
+/**
+ *  所在位置比例 0~1 默认0.5
+ */
+@property (nonatomic, assign) CGFloat positionPercent;
 @end
 
 

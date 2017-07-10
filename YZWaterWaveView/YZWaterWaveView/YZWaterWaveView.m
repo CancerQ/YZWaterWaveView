@@ -52,7 +52,7 @@
     [super setFrame:frame];
     waterWaveWidth  = self.frame.size.width;
     waveCycle =  2 * M_PI / waterWaveWidth;
-    currentWavePointY = self.frame.size.height/2;
+    currentWavePointY = self.frame.size.height*(1 - (self.config.positionPercent?:0.5));
 }
 
 - (void)setWaveColor:(UIColor *)waveColor{
@@ -66,6 +66,7 @@
     self.config.configHandle = ^(YZWaterWave *config) {
         weakSelf.transform = CGAffineTransformMakeRotation(config.rotation*M_PI/180);
         weakSelf.waveColor = config.color?:weakSelf.waveColor;
+        currentWavePointY = weakSelf.frame.size.height*(1 - (config.positionPercent?:0.5));
     };
     handle(self.config);
     self.config.configHandle(self.config);
