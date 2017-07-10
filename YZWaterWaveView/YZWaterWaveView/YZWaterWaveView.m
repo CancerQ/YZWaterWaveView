@@ -29,13 +29,13 @@
     CGFloat waterWaveWidth; //
     CGFloat offsetXF;
     CGFloat offsetXS;
-    CGFloat currentWavePointY; // 当前波浪上市高度Y（高度从大到小 坐标系向下增长）
 }
 @property (nonatomic, strong) YZWaterWave   *config;
 @property (nonatomic, strong) CADisplayLink *waveDisplaylink;
 @property (nonatomic, strong) CAShapeLayer  *firstWaveLayer;
 @property (nonatomic, strong) CAShapeLayer  *secondWaveLayer;
 @property (nonatomic, strong) UIColor       *waveColor;
+@property (nonatomic, assign) CGFloat       currentWavePointY; // 当前波浪上市高度Y（高度从大到小 坐标系向下增长）
 @end
 @implementation YZWaterWaveView
 
@@ -52,7 +52,7 @@
     [super setFrame:frame];
     waterWaveWidth  = self.frame.size.width;
     waveCycle =  2 * M_PI / waterWaveWidth;
-    currentWavePointY = self.frame.size.height*(1 - (self.config.positionPercent?:0.5));
+    self.currentWavePointY = self.frame.size.height*(1 - (self.config.positionPercent?:0.5));
 }
 
 - (void)setWaveColor:(UIColor *)waveColor{
@@ -66,7 +66,7 @@
     self.config.configHandle = ^(YZWaterWave *config) {
         weakSelf.transform = CGAffineTransformMakeRotation(config.rotation*M_PI/180);
         weakSelf.waveColor = config.color?:weakSelf.waveColor;
-        currentWavePointY = weakSelf.frame.size.height*(1 - (config.positionPercent?:0.5));
+        weakSelf.currentWavePointY = weakSelf.frame.size.height*(1 - (config.positionPercent?:0.5));
     };
     handle(self.config);
     self.config.configHandle(self.config);
@@ -110,11 +110,11 @@
     
     
     CGMutablePathRef firstPath = CGPathCreateMutable();
-    CGFloat y = currentWavePointY;
+    CGFloat y = self.currentWavePointY;
     CGPathMoveToPoint(firstPath, nil, 0, y);
     for (float x = 0.0f; x <=  waterWaveWidth ; x++) {
         // 正弦波浪公式
-        y = waveAmplitudeF * sinf(waveCycle * x - offsetXF) + currentWavePointY;
+        y = waveAmplitudeF * sinf(waveCycle * x - offsetXF) + self.currentWavePointY;
         CGPathAddLineToPoint(firstPath, nil, x, y);
     }
     
@@ -130,7 +130,7 @@
     CGPathMoveToPoint(secondPath, nil, 0, y);
     for (float x = 0.0f; x <=  waterWaveWidth ; x++) {
         // 余弦波浪公式
-        y = waveAmplitudeS * cosf(waveCycle * x - offsetXS) + currentWavePointY ;
+        y = waveAmplitudeS * cosf(waveCycle * x - offsetXS) + self.currentWavePointY ;
         CGPathAddLineToPoint(secondPath, nil, x, y);
     }
     
